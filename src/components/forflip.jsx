@@ -9,7 +9,7 @@ import './forflip.css';
 
 
 const navbarStyle = {
-  backgroundColor: 'orange',
+  backgroundColor: '#eee',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -84,7 +84,7 @@ const HorizontalNavbar = () => {
         </div>
       </nav>
 
-      <div style={{ padding: '20px', backgroundColor: 'aqua' }}>
+      <div style={{ padding: '20px', backgroundColor: '#eee' }}>
         <h2>
           <FontAwesomeIcon icon={faStar} style={{ marginRight: '5px' }} /> Featured Products
         </h2>

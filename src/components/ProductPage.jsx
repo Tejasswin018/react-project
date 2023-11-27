@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch,  faThumbsUp, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import Cart from './Cart'; // Import the Cart component
+import Cart from '../components/Cart.jsx'; // Import the Cart component
 import { NavLink } from 'react-router-dom';
 import {  faHome } from '@fortawesome/free-solid-svg-icons';
 
@@ -190,7 +190,7 @@ const HorizontalNavbar = () => {
 
        {/* Home Button */}
  <NavLink
-        to="/"
+        to="/Home"
         style={{
           textDecoration: 'none',
           color: 'white',

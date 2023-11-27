@@ -34,7 +34,7 @@ const Help = () => {
 
       {/* Home Button */}
       <NavLink
-        to="/"
+        to="/Home"
         style={{
           textDecoration: 'none',
           color: 'white',

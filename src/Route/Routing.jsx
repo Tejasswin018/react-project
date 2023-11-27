@@ -12,11 +12,13 @@ import Services from "../components/Servicee";
 import Help from "../components/help";
 import About from "../iabout"
 import Cart from "../components/Cart";
+import Func from "../components/Routing";
+import Amazon from "../components/amazon";
 const Routing = () => {
   return (
     <Routes>
-      <Route path='/' element={<Horizon/>} />
-      <Route path="/Sign" element={<Signup />} />
+      <Route path='/Home' element={<Horizon/>} />
+      <Route path="/" element={<Signup />} />
       <Route path="/Login" element={<Login/>} />
       <Route path="/Go" element={<Product/>} />
       <Route path="/Serives" element={<Services/>} />
@@ -24,6 +26,10 @@ const Routing = () => {
       <Route path="/Help" element={<Help/>} />
       <Route path="/About" element={<About/>} />
       <Route path="/cart" element={<Cart/>} />
+      <Route path="/add" element={<Func/>} />
+      <Route path="/Products" element={<Amazon/>} />
+
+      
    
     </Routes>
   );

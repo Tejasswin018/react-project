@@ -7,7 +7,7 @@ import About from './About';
 import Services from './Services';
 import Products from './Products';
 import ContactUs from './ContactUs';
-import Help from './Help';
+import Help from './help'
 import Login from './Login';
 
 const MainRoutes = () => {

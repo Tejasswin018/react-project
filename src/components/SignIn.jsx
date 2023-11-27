@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons'; // Import the user icon
+import axios from 'axios';
 
 const Login = () => {
   const backimg = {
-    backgroundImage: 'url("https://cdn.dribbble.com/users/1595839/screenshots/11700339/media/5b39c07a6a721b6b440288c6c6ec5cb1.gif")',
+    backgroundImage: 'url("https://cdn.dribbble.com/users/1200451/screenshots/8759739/media/38dc1e5f1060c443d927978bef79968c.gif")',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundSize: '100% 100%',
     height: '100vh',
     width: '100vw',
     display: 'flex',
@@ -16,7 +17,7 @@ const Login = () => {
     flexDirection: 'column',
   };
 
-  const Navigator = useNavigate();
+  const navigate = useNavigate();
 
   const BStyle = {
     backgroundColor: 'purple',
@@ -38,21 +39,56 @@ const Login = () => {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
 
-  const getemail = (event) => {
-    setemail(event.target.value);
-  };
-  const getpassword = (event) => {
-    setpassword(event.target.value);
-  };
+  
+const handleSubmit=(e)=>{
+e.preventDefault();
+if(Validate())
+{
+  axios.get("http://localhost:3026/users")
+  .then(result=>{
+    result.data.map(user=>{
+      if(user.Email===email)
+      {
+        if(user.Password===password)
+        {
+navigate('/Home')
+        alert("Succesfull LOGIN")
+        return(<><p>good</p></>)
+        }
+        else{
+          alert("Wrong Password or email");
+        }
+      }
+      else{
+        alert("Wrong Password or email");
+      }
+     
+    })
+  })
+}
 
-  const logg = (event) => {
-    console.log(password);
 
-    console.log(email);
-    event.preventDefault();
-    console.log('OVER');
-    Navigator('/');
-  };
+
+}
+
+const Validate=()=>{
+    let result=true;
+    if(email===''||email===null)
+    {
+        result=false;
+        console.log('name enter'); 
+    }
+    
+    if(password===''||password===null)
+    {
+        result=false;
+        console.log('enter pass ');
+    }
+    return result;
+}
+
+ 
+
 
   return (
     <>
@@ -60,21 +96,22 @@ const Login = () => {
         <h2 style={{ color: 'purple', fontFamily: 'Roboto' }}>
           <FontAwesomeIcon icon={faUser} style={{ marginRight: '10px' }} /> Login Page
         </h2>
-        <form>
-          <input type="text" placeholder="Enter email address" style={inputStyle} onChange={getemail}></input>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={email} placeholder="Enter email address" style={inputStyle} onChange={e=>setemail(e.target.value)}></input>
 
           <br></br>
           <br></br>
-          <input type="password" placeholder="Password" onChange={getpassword} style={inputStyle}></input>
+          <input type="password" value={password} placeholder="Password" style={inputStyle}  onChange={e=>setpassword(e.target.value)} ></input>
 
           <br></br>
-          <a href="k" style={atag}>
-            <b>forgot password?</b>
+          <a href="" style={atag}>
+            
+            <Link to={'/'}>forget Password?</Link>
           </a>
 
           <br></br>
           <br></br>
-          <button style={BStyle} onClick={logg}>
+          <button  type="submit" style={BStyle} >
             <b>
               <h3>Login</h3>
             </b>

@@ -54,7 +54,7 @@ const Contact = () => {
       </div>
 
       {/* Home Button */}
-      <Link to="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#333', color: 'white', padding: '15px', textDecoration: 'none' }}>
+      <Link to="/Home" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#333', color: 'white', padding: '15px', textDecoration: 'none' }}>
         <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
         <span>Home</span>
       </Link>

@@ -5,20 +5,22 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faInfo, faEnvelope, faQuestion, faSignInAlt, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 import Hori from './forflip';
-import './Horizonw e  rgffecxfeef   eed3sswswwedeeswwswwrfcfce33es3sw3sw3sws3w3wswwwsw3sr4ft5fd4re3de3etalNavbar.css'; // Add a CSS file for styling
+import './HorizontalNavbar.css'; // Add a CSS file for styling
 
 // Styles directly defined within the component
 const navbarStyle = {
-  backgroundColor: 'red',
+  backgroundColor: '#555',
   display: 'flex',
+  //backgroundSize:'cover',
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '15px',
+  width:'100%'
 };
 
 const linkStyle = {
   textDecoration: 'none',
-  color: 'blue',
+  color: 'white',
   fontWeight: 'bold',
   padding: '10px',
   transition: 'background-color 0.3s',
@@ -99,8 +101,8 @@ const HorizontalNavbar = () => {
   return (
     <div>
       <nav style={navbarStyle}>
-        <NavLink to="/" style={linkStyle} activeStyle={activeLinkStyle} onMouseEnter={() => handleComponentHover('home')} onMouseLeave={handleComponentLeave}>
-          <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} /> Home
+        <NavLink to="/Login" style={linkStyle} activeStyle={activeLinkStyle} onMouseEnter={() => handleComponentHover('home')} onMouseLeave={handleComponentLeave}>
+          <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} /> Switch Account
           {showTooltip === 'home' && (
             <div style={tooltipStyle}>
               <p>{componentDetails.home}</p>
@@ -123,7 +125,7 @@ const HorizontalNavbar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/Go" style={linkStyle} activeStyle={activeLinkStyle} onClick={product} onMouseEnter={() => handleComponentHover('products')} onMouseLeave={handleComponentLeave}>
+        <NavLink to="/Add" style={linkStyle} activeStyle={activeLinkStyle} onClick={product} onMouseEnter={() => handleComponentHover('products')} onMouseLeave={handleComponentLeave}>
           <FontAwesomeIcon icon={faBars} style={{ marginRight: '5px' }} /> Products
           {showTooltip === 'products' && (
             <div style={tooltipStyle}>
@@ -147,8 +149,8 @@ const HorizontalNavbar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/Sign" style={linkStyle} activeStyle={activeLinkStyle} onClick={handleSignInClick}>
-          <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: '5px' }} /> Sign In
+        <NavLink to="/" style={linkStyle} activeStyle={activeLinkStyle} onClick={handleSignInClick}>
+          <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: '5px' }} /> Sign  Out
         </NavLink>
       </nav>
 

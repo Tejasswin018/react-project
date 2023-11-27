@@ -34,7 +34,7 @@ const Furniture = () => {
         <br></br>
         <div style={title_1}>
           <FontAwesomeIcon icon={faStore} style={{ marginRight: '10px' }} />
-          <b>FURNITURE STORE</b>
+          <b>URBAN FURNTIURES</b>
         </div>
       </div>
 

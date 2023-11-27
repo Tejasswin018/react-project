@@ -29,7 +29,7 @@ const Cart = ({ cartItems }) => {
     <br></br>
     <br></br>
     <NavLink
-        to="/"
+        to="/Home"
         style={{
             textDecoration: 'none',
             color: 'white',
@@ -69,7 +69,7 @@ const Cart = ({ cartItems }) => {
 
        {/* Home Button */}
  <NavLink
-        to="/"
+        to="/Home"
         style={{
             textDecoration: 'none',
             color: 'white',
@@ -82,7 +82,7 @@ const Cart = ({ cartItems }) => {
             borderRadius: '5px',
         }}
         >
-        <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} /> Home
+        <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} /> Product Page
       </NavLink>
           </div>
     </div>
